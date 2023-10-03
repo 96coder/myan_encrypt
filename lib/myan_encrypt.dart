@@ -5,10 +5,10 @@ import 'package:crypto/crypto.dart' as crypto;
 import 'package:encrypt/encrypt.dart';
 import 'package:flutter/services.dart';
 
-class NormalEncrypt {
+class Enc1 {
   final String _encryptionKey;
 
-  NormalEncrypt(this._encryptionKey);
+  Enc1(this._encryptionKey);
 
   String encrypt(String text) {
     final encrypter = Encrypter(AES(Key.fromBase64(_encryptionKey)));
@@ -25,11 +25,11 @@ class NormalEncrypt {
 
 ///
 
-class EncryptUtil {
+class Enc2 {
   final String _encryptionKey;
   final String _hmacKey;
 
-  EncryptUtil(this._encryptionKey, this._hmacKey);
+  Enc2(this._encryptionKey, this._hmacKey);
 
   String encrypt(String text) {
     final key = Key.fromUtf8(_encryptionKey);
@@ -74,11 +74,10 @@ class EncryptUtil {
 
 ///
 
-class EncryptUtil2 {
+class Enc3 {
   final Key _encryptionKey;
 
-  EncryptUtil2(String encryptionKey)
-      : _encryptionKey = Key.fromUtf8(encryptionKey);
+  Enc3(String encryptionKey) : _encryptionKey = Key.fromUtf8(encryptionKey);
 
   String encrypt(String plainText) {
     final encrypter = Encrypter(AES(_encryptionKey, mode: AESMode.cbc));
