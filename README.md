@@ -2,9 +2,9 @@ Flutter String encryption package
 
 ## Features
 
-- NormalEncrypt
-- EncryptUtil
-- EncryptUtil2
+- Enc1
+- Enc2
+- Enc3
 
 ## Getting started
 
@@ -114,5 +114,3 @@ class _MyAppState extends State<MyApp> {
 }
 
 ```
-
-# myan_encrypt

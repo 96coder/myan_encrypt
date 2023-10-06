@@ -219,12 +219,11 @@ packages:
   myan_encrypt:
     dependency: "direct main"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "6d1bc8eb25c8f6efa173dc0e305d3a904d78dc06"
-      url: "https://github.com/96coder/myan_encrypt.git"
-    source: git
-    version: "0.0.1"
+      name: myan_encrypt
+      sha256: "7f949679c9fb71500a2e65bf9954ea0650130dd8c9d5f416d7e3229d7a8c0685"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.3"
   path:
     dependency: transitive
     description:

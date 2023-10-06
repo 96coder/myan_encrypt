@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:myan_encrypt/myan_encrypt.dart';
 
@@ -30,41 +29,15 @@ class _MyAppState extends State<MyApp> {
               children: [
                 TextButton(
                   onPressed: () {
-                    NormalEncrypt normalEncrypt =
-                        NormalEncrypt('_encryptionKey');
+                    Enc1 normalEncrypt = Enc1('_encryptionKey');
                     log(normalEncrypt.encrypt('plainText'));
-                  },
-                  child: const Text('Normal Encrypt'),
-                ),
-                TextButton(
-                  onPressed: () {
-                    NormalEncrypt normalEncrypt =
-                        NormalEncrypt('_encryptionKey');
-                    log(normalEncrypt
-                        .decrypt(normalEncrypt.encrypt('plainText')));
-                  },
-                  child: const Text('Normal Decrypt'),
-                ),
-              ],
-            ),
-            const Divider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    EncryptUtil encryptUtil =
-                        EncryptUtil('_encryptionKey', '_hmacKey');
-                    log(encryptUtil.encrypt('plainText'));
                   },
                   child: const Text('Encrypt I'),
                 ),
                 TextButton(
                   onPressed: () {
-                    EncryptUtil encryptUtil =
-                        EncryptUtil('_encryptionKey', '_hmacKey');
-                    log(encryptUtil.decrypt(encryptUtil.encrypt('plainText')));
+                    Enc1 encryptUtil = Enc1('_encryptionKey');
+                    log(encryptUtil.encrypt('plainText'));
                   },
                   child: const Text('Decrypt I'),
                 ),
@@ -77,18 +50,39 @@ class _MyAppState extends State<MyApp> {
               children: [
                 TextButton(
                   onPressed: () {
-                    EncryptUtil2 encryptUtil2 = EncryptUtil2('encryptionKey');
-                    log(encryptUtil2.encrypt('plainText'));
+                    Enc2 encryptUtil = Enc2('_encryptionKey', '_hmacKey');
+                    log(encryptUtil.encrypt('plainText'));
                   },
                   child: const Text('Encrypt II'),
                 ),
                 TextButton(
                   onPressed: () {
-                    EncryptUtil2 encryptUtil2 = EncryptUtil2('encryptionKey');
+                    Enc2 encryptUtil = Enc2('_encryptionKey', '_hmacKey');
+                    log(encryptUtil.decrypt(encryptUtil.encrypt('plainText')));
+                  },
+                  child: const Text('Decrypt II'),
+                ),
+              ],
+            ),
+            const Divider(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Enc3 encryptUtil2 = Enc3('encryptionKey');
+                    log(encryptUtil2.encrypt('plainText'));
+                  },
+                  child: const Text('Encrypt III'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Enc3 encryptUtil2 = Enc3('encryptionKey');
                     log(encryptUtil2
                         .decrypt(encryptUtil2.encrypt('plainText')));
                   },
-                  child: const Text('Decrypt II'),
+                  child: const Text('Decrypt III'),
                 ),
               ],
             ),
