@@ -1,6 +1,6 @@
 name: myan_encrypt
 description: String encryption package for flutter
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/96coder/myan_encrypt.git
 
 environment:
